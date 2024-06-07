@@ -28,7 +28,7 @@ import model.Model_User_Account;
  * @author Admin
  */
 public class ServiceUser {
-    private final String PATH_FILE = "server_data/profile.png";
+    private final String PATH_FILE = "img_avatar/profile.png";
   //SQL truy vấn
     private final String LOGIN = "select UserID, user_account.UserName, Gender, Image from `user` join user_account using (UserID) where `user`.UserName=BINARY(?) and `user`.`Password`=BINARY(?) and user_account.`Status`='1'";
     private final String INSERT_USER = "insert into user (UserName, Password) values (?,?)";

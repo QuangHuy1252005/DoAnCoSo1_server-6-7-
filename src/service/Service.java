@@ -82,6 +82,7 @@ public class Service {
         server.addEventListener("register", Model_Register.class, new DataListener<Model_Register>() { //lắng nghe event register từ client
             @Override
             public void onData(SocketIOClient socketClient, Model_Register t, AckRequest ar) throws Exception {
+                System.out.println(t);
                 Model_Message message = serviceUser.register(t);
                 ar.sendAckData(message.isAction(), message.getMessage(), message.getData());// phản hồi lại client với gói tin, lớp ackRequest từ socketIO
                 if(message.isAction()){
